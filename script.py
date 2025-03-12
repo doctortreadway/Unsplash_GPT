@@ -10,7 +10,7 @@ UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY")
 @app.route("/fetch_unsplash_images", methods=["GET"])
 def fetch_unsplash_images():
     query = request.args.get("query", "")
-    url = f"https://api.unsplash.com/search/photos?query={query}&per_page=1&client_id={UNSPLASH_ACCESS_KEY}"
+    url = f"https://api.unsplash.com/search/photos?query={query}&per_page=5&client_id={UNSPLASH_ACCESS_KEY}"
     
     response = requests.get(url)
     if response.status_code == 200:
