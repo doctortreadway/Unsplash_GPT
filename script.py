@@ -36,7 +36,7 @@ def resize_image(image_url):
 @app.route("/fetch_unsplash_images", methods=["GET"])
 def fetch_unsplash_images():
     query = request.args.get("query", "")
-    url = f"https://api.unsplash.com/search/photos?query={query}&per_page=2&client_id={UNSPLASH_ACCESS_KEY}"
+    url = f"https://api.unsplash.com/search/photos?query={query}&per_page=2&orientation=landscape&client_id={UNSPLASH_ACCESS_KEY}"
 
     response = requests.get(url)
     if response.status_code == 200:
