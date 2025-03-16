@@ -1,8 +1,10 @@
 import os
 from flask import Flask, request, jsonify
 import requests
+from flask_cors import CORS  # 🔥 Import CORS
 
 app = Flask(__name__)
+CORS(app)  # 🔥 Enable CORS for all routes
 
 # Load the Unsplash API key from environment variables
 UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY")
@@ -35,5 +37,3 @@ def ping():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-
-   
