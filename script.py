@@ -26,7 +26,7 @@ def fetch_unsplash_images():
         ]
 
         # Return only the first 2 properly formatted landscape images
-        return jsonify({"images": landscape_images[:2]})
+        return jsonify({"images": landscape_images[:6]})
     else:
         return jsonify({"error": "Failed to fetch images"}), response.status_code
 
