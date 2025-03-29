@@ -20,7 +20,7 @@ def fetch_unsplash_images():
         data = response.json()
         landscape_images = [
             {
-                "urls": {"small": img.get("urls", {}).get("small", "")},
+                "urls": {"full": img.get("urls", {}).get("full", "")},
                 "user": {"name": img.get("user", {}).get("name", "Unknown")}
             }
             for img in data.get("results", [])
