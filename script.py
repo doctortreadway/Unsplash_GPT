@@ -20,8 +20,13 @@ def fetch_unsplash_images():
         data = response.json()
         landscape_images = [
             {
-                "urls": {"full": img.get("urls", {}).get("full", "")},
-                "user": {"name": img.get("user", {}).get("name", "Unknown")}
+                "urls": {
+                    "small": img.get("urls", {}).get("small", ""),  # ✅ Preview image
+                    "full": img.get("urls", {}).get("full", "")     # ✅ High-res for editing
+                },
+                "user": {
+                    "name": img.get("user", {}).get("name", "Unknown")
+                }
             }
             for img in data.get("results", [])
             if img.get("width", 0) > img.get("height", 0)
